@@ -20,14 +20,12 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -69,7 +67,6 @@ fun BranchDetails(
                     .verticalScroll(rememberScrollState())
                     .padding(16.dp)
             ) {
-                // 📸 Branch image on top
                 AsyncImage(
                     model = it.imageUri,
                     contentDescription = "${it.name} image",
@@ -82,7 +79,6 @@ fun BranchDetails(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // 🧾 Branch info card
                 Card(
                     colors = CardDefaults.cardColors(
                         containerColor = MaterialTheme.colorScheme.surfaceVariant

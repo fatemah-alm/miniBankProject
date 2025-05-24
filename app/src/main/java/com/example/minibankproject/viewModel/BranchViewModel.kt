@@ -16,20 +16,10 @@ class BranchViewModel : ViewModel() {
         private set
 
 
-    fun findBranch(name: String?): BranchModel? {
-        return branchListState.find { it.name == name }
-    }
-
     fun selectBranch(branch: BranchModel) {
         selectedBranch = branch
     }
 
-    private fun updateBranchListState() {
-        selectedBranch?.let { selected ->
-            branchListState = branchListState
-                .map { if (it.name == selected.name) selected else it }
-        }
-    }
 
     fun markAsFavoriteBranch(branch: BranchModel) {
         favoriteBranch = branch
